@@ -1,36 +1,61 @@
-import React from 'react';
-import { View, Text, Button, TextInput } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, Button, TextInput, StyleSheet, Image } from 'react-native';
 
 const LoginScreen = ({ navigation }) => {
-  const [text, onChangeText] = React.useState('Login Do Usuario');
-  const [number, onChangeNumber] = React.useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   return (
-    <SafeAreaView>
+    <View style={styles.container}>
+      <Text style={styles.title}>Login</Text>
+      <Text style={styles.Email}>Email:</Text>
       <TextInput
         style={styles.input}
-        onChangeText={onChangeText}
-        value={text}
+        placeholder="Email"
+        onChangeText={setEmail}
+        value={email}
+        keyboardType="email-address"
+        autoCapitalize="none"
       />
+      <Text>Senha:</Text>
       <TextInput
         style={styles.input}
-        onChangeText={onChangeNumber}
-        value={number}
-        placeholder="Login"
-        keyboardType="text"
+        placeholder="Senha"
+        onChangeText={setPassword}
+        value={password}
+        secureTextEntry
       />
-    </SafeAreaView>
-   
+      <Button title="Entrar"/>
+      <Button
+        title="Ir para o Cadastro"
+        onPress={() => navigation.navigate('Cadastro')}/>
+    </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 20,
   },
-  
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+  input: {
+    width: "30%",
+    height: "5%",
+    borderColor: 'gray',
+    borderWidth: 1,
+    marginBottom: 20,
+    paddingHorizontal: 10,
+  },
+  Email: {
+    textAlign:'left'
+  }
 });
 
 export default LoginScreen;
