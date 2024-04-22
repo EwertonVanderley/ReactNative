@@ -8,16 +8,16 @@ const LoginScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Login</Text>
-      <Text style={styles.Email}>Email:</Text>
+      <Image style={styles.Imagem}
+        source={require("../assets/Icon.jpg")}
+      />
       <TextInput
         style={styles.input}
         placeholder="Email"
         onChangeText={setEmail}
         value={email}
         keyboardType="email-address"
-        autoCapitalize="none"
       />
-      <Text>Senha:</Text>
       <TextInput
         style={styles.input}
         placeholder="Senha"
@@ -25,26 +25,31 @@ const LoginScreen = ({ navigation }) => {
         value={password}
         secureTextEntry
       />
-      <Button title="Entrar"/>
+      <Button style={styles.botao} title="Entrar" />
       <Button
+        style={styles.botao}
         title="Ir para o Cadastro"
-        onPress={() => navigation.navigate('Cadastro')}/>
+        onPress={() => navigation.navigate('Cadastro')} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 20,
+    marginVertical: 20,
   },
+
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
   },
+
   input: {
     width: "30%",
     height: "5%",
@@ -53,9 +58,11 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     paddingHorizontal: 10,
   },
-  Email: {
-    textAlign:'left'
-  }
+
+  Imagem: {
+    margin: 20,
+  },
+
 });
 
 export default LoginScreen;
