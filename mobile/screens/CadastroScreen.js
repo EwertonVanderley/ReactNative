@@ -3,6 +3,7 @@ import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 
 const CadastroScreen = ({ navigation }) => {
   const [nome, setNome] = useState('');
+  const [Data, setData] = useState ('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [confirmacaoSenha, setConfirmacaoSenha] = useState('');
@@ -11,12 +12,23 @@ const CadastroScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Cadastro</Text>
+
       <TextInput
         style={styles.input}
-        placeholder="Nome"
+        placeholder="Nome Completo"
         onChangeText={setNome}
         value={nome}
       />
+
+      <TextInput
+        style={styles.input}
+        placeholder="Data de Nascimento"
+        onChangeText={setData}
+        value={Data}
+        keyboardType="number"
+        autoCapitalize="none"
+      />
+
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -25,6 +37,7 @@ const CadastroScreen = ({ navigation }) => {
         keyboardType="email-address"
         autoCapitalize="none"
       />
+
       <TextInput
         style={styles.input}
         placeholder="Senha"
@@ -32,6 +45,7 @@ const CadastroScreen = ({ navigation }) => {
         value={senha}
         secureTextEntry
       />
+
       <TextInput
         style={styles.input}
         placeholder="Confirme a senha"
@@ -39,6 +53,13 @@ const CadastroScreen = ({ navigation }) => {
         value={confirmacaoSenha}
         secureTextEntry
       />
+
+      <Button title="Enviar" />
+
+      <Button
+        title="Voltar"
+        onPress={() => navigation.navigate('Login')} />
+
     </View>
   );
 }
@@ -56,9 +77,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   input: {
-    width: '100%',
-    height: 40,
-    borderColor: 'gray',
+    width: '30%',
+    height: '5%',
     borderWidth: 1,
     marginBottom: 20,
     paddingHorizontal: 10,
