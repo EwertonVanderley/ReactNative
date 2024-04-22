@@ -7,10 +7,9 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+
       <Text style={styles.title}>Login</Text>
-      <Image style={styles.Imagem}
-        source={require("../assets/Icon.jpg")}
-      />
+
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -18,6 +17,7 @@ const LoginScreen = ({ navigation }) => {
         value={email}
         keyboardType="email-address"
       />
+
       <TextInput
         style={styles.input}
         placeholder="Senha"
@@ -25,11 +25,14 @@ const LoginScreen = ({ navigation }) => {
         value={password}
         secureTextEntry
       />
-      <Button style={styles.botao} title="Entrar" />
+
+      <Button title="Entrar" />
+
       <Button
         style={styles.botao}
         title="Ir para o Cadastro"
         onPress={() => navigation.navigate('Cadastro')} />
+        
     </View>
   );
 };
@@ -53,16 +56,10 @@ const styles = StyleSheet.create({
   input: {
     width: "30%",
     height: "5%",
-    borderColor: 'gray',
     borderWidth: 1,
     marginBottom: 20,
     paddingHorizontal: 10,
   },
-
-  Imagem: {
-    margin: 20,
-  },
-
 });
 
 export default LoginScreen;
