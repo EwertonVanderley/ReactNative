@@ -26,13 +26,14 @@ const LoginScreen = ({ navigation }) => {
         secureTextEntry
       />
 
-      <Button title="Entrar" />
+      <Button
+        title="Entrar"
+        onPress={() => navigation.navigate('Home')} />
 
       <Button
-        style={styles.botao}
         title="Ir para o Cadastro"
         onPress={() => navigation.navigate('Cadastro')} />
-        
+
     </View>
   );
 };
