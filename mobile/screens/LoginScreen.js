@@ -1,40 +1,47 @@
 import React, { useState } from 'react';
-import { View, Text, Button, TextInput, StyleSheet, Image } from 'react-native';
+import { View, Text, Button, TextInput, StyleSheet, Image, SafeAreaView } from 'react-native';
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
 
-      <Text style={styles.title}>Login</Text>
+      <View style={styles.tela}>
 
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        onChangeText={setEmail}
-        value={email}
-        keyboardType="email-address"
-      />
+        <Text style={styles.title}>Login</Text>
 
-      <TextInput
-        style={styles.input}
-        placeholder="Senha"
-        onChangeText={setPassword}
-        value={password}
-        secureTextEntry
-      />
+        <TextInput
+          style={styles.input}
+          placeholder="Email"
+          onChangeText={setEmail}
+          value={email}
+          keyboardType="email-address"
+        />
 
-      <Button
-        title="Entrar"
-        onPress={() => navigation.navigate('Home')} />
+        <TextInput
+          style={styles.input}
+          placeholder="Senha"
+          onChangeText={setPassword}
+          value={password}
+          secureTextEntry
+        />
 
-      <Button
-        title="Ir para o Cadastro"
-        onPress={() => navigation.navigate('Cadastro')} />
+        <Button
+          title="Entrar"
+          onPress={() => navigation.navigate('Home')} />
+      
+      </View>
 
-    </View>
+      <View style={styles.Botao}>
+        <Button
+          title="Ir para o Cadastro"
+          onPress={() => navigation.navigate('Cadastro')} />
+      </View>
+
+    </SafeAreaView>
+
   );
 };
 
@@ -43,9 +50,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
     paddingHorizontal: 20,
     marginVertical: 20,
+  },
+
+  tela: {
+    alignItems: 'center',
   },
 
   title: {
@@ -56,10 +66,14 @@ const styles = StyleSheet.create({
 
   input: {
     width: "30%",
-    height: "5%",
+    height: 30,
     borderWidth: 1,
     marginBottom: 20,
     paddingHorizontal: 10,
+  },
+  Botao: {
+    margin: 10,
+    alignItems: 'center',
   },
 });
 
