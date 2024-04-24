@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, SafeAreaView } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, SafeAreaView, Image } from 'react-native';
 
 const CadastroScreen = ({ navigation }) => {
   const [nome, setNome] = useState('');
