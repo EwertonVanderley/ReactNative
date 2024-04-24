@@ -6,14 +6,14 @@ const HomeScreen = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.Tela}>
-                <Text style={styles.title}>Home</Text>
+                <Text style={styles.title}>Selecione uma Opção abaixo:</Text>
 
                 <Image style={styles.Imagem}
                     source={{ uri: 'http://minaspetro.com.br/blog/wp-content/uploads/2016/09/como-lidar-com-4-tipos-de-motoristas-no-posto-de-combustivel.jpeg' }} 
                 />
 
                 <Button
-                    title="Calcular a gasolina"
+                    title="Calcular a Gasolina e Álcool"
                     onPress={() => navigation.navigate('Gasolina')} />
                 <Image style={styles.Imagem}
                     source={{ uri: 'https://static.tuasaude.com/media/article/jn/ag/imc_30445_l.jpg'}}/>

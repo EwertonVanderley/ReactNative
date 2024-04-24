@@ -11,6 +11,9 @@ const LoginScreen = ({ navigation }) => {
       <View style={styles.tela}>
 
         <Text style={styles.title}>Login</Text>
+        <Image style={styles.Imagem}
+          source={{ uri: 'https://icon-library.com/images/login-icon-images/login-icon-images-0.jpg' }}
+        />
 
         <TextInput
           style={styles.input}
@@ -31,7 +34,7 @@ const LoginScreen = ({ navigation }) => {
         <Button
           title="Entrar"
           onPress={() => navigation.navigate('Home')} />
-      
+
       </View>
 
       <View style={styles.Botao}>
@@ -52,6 +55,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: 20,
     marginVertical: 20,
+    
   },
 
   tela: {
@@ -62,6 +66,12 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
+  },
+
+  Imagem: {
+    height: 200,
+    width: 200,
+    margin: 10,
   },
 
   input: {
